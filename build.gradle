@@ -17,19 +17,10 @@ dependencies {
 
 jacocoTestReport {
     reports {
-        xml {
-            enabled = false
-        }
-        csv {
-            enabled = false
-        }
-        html {
-            enabled = false
-        }
-        txt {
-            enabled = true
-        }
-        txt.destination file("${buildDir}/reports/jacoco/jacocoTestReport.txt")
+        with(
+            type: JacocoReportType.XML,
+            enabled: true
+        )
     }
 }
 
