@@ -20,7 +20,7 @@ dependencies {
 jacocoTestReport {
     reports {
         xml {
-            destinationFile = file("$buildDir/reports/jacoco/jacocoTestReport.xml")
+            enabled = true
         }
     }
 }
