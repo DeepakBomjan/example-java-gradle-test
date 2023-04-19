@@ -17,12 +17,11 @@ dependencies {
 
 jacocoTestReport {
     reports {
-        xml {
-            enabled true
-        }
-        html {
-            enabled false
-        }
+        xml.enabled false
+        csv.enabled false
+        html.enabled false
+        txt.enabled true
+        txt.destination file("${buildDir}/reports/jacoco/jacocoTestReport.txt")
     }
 }
 
