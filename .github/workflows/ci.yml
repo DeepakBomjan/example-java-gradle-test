@@ -15,6 +15,6 @@ jobs:
       - name: Check files
         run: find ./ -type f
       - name: Collect coverage
-        run: gradle jacocoTestReport
+        run: gradle test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
