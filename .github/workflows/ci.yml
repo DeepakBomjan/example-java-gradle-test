@@ -11,7 +11,7 @@ jobs:
         with:
           java-version: 18
       - name: Install dependencies, run tests, and collect coverage
-        run: gradle build
+        run: gradle build --debug
       - name: Check files
         run: find ./ -type f
       - name: Collect coverage
