@@ -12,7 +12,9 @@ jobs:
           java-version: 18
       - name: Install dependencies, run tests, and collect coverage
         run: gradle build
+      - name: Check files
+        run: find ./ -type f
       - name: Collect coverage
-        run: gradle jacocoTestReport
+        run: gradle jacocoTestReport --dubug
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
