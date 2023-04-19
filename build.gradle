@@ -15,13 +15,34 @@ dependencies {
     testImplementation "junit:junit:4.13"
 }
 
+
+
 jacocoTestReport {
     reports {
-        with(
-            type: JacocoReportType.XML,
-            enabled: true
-        )
+        xml {
+            enabled true
+        }
+        html {
+            enabled false
+        }
+        csv {
+            enabled false
+        }
+        xml.destination file("${buildDir}/reports/jacoco/jacocoTestReport.xml")
+        csv.destination file("${buildDir}/reports/jacoco/jacocoTestReport.csv")
+        // set report type
+        reports {
+            html.enabled true
+            html.destination file("${buildDir}/reports/jacoco/jacocoTestReport.html")
+            html {
+                enabled true
+                // specify report type
+                JacocoReportType.HTML.destinationProvider = { file("${buildDir}/reports/jacoco/custom-jacoco-report.html") }
+            }
+        }
     }
 }
+
+
 
 check.dependsOn jacocoTestReport
