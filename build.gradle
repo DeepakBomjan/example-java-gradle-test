@@ -19,7 +19,7 @@ dependencies {
 
 jacocoTestReport {
     reports {
-        xml {
+        txt {
             enabled true
         }
     }
